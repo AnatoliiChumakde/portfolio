@@ -239,7 +239,7 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
         order: 7;
         align-self: center;
         position: absolute;
-        bottom: 5px;
+        top: 5px;
     }
 
     .nav_burger .nav_element{
