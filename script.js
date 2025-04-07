@@ -22,7 +22,7 @@ const burgermenu = document.querySelector('.burgermenu')
 const xmenu = document.querySelector('.xmenu')
 
 const people = [
-    'https://lh3.google.com/u/0/d/12fuxxYAYvz5Xv5PcJ23LNdcQcMURivOm=w1280-h1319-iv1',
+    'https://drscdn.500px.org/photo/1111556548/q%3D90_m%3D2048/v2?sig=e2f075d4596320b4e8a04a2236a94683643f3bc58cc65a4de5454d9d8785f6f0',
     'https://lh3.google.com/u/0/d/1868wnbyic3e3hWMee0lTL7K5u4FKnuR4=w1280-h1318-iv1?auditContext=forDisplay',
     'https://lh3.google.com/u/0/d/1RmAXrb8wENgt8Vbt334aZ39zGcfLl_N3=w636-h1319-iv1',
     'https://lh3.google.com/u/0/d/1i6ksiyR-m181Y2VbgmcGEgEsP6c86pwO=w636-h1319-iv1',
