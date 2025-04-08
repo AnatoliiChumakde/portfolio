@@ -13,7 +13,13 @@ masonryBlock1.classList.add('masonry_block')
 masonryBlock2.classList.add('masonry_block')
 masonryBlock3.classList.add('masonry_block')
 
-const imgfull = document.querySelector('#imgfull')
+const imgprev = document.querySelector('#imgprev')
+const imgcur = document.querySelector('#imgcur')
+const imgnext = document.querySelector('#imgnext')
+const imgWrapperPrev = document.querySelector('#imgwrapperprev')
+const imgWrapperCur = document.querySelector('#imgwrappercur')
+const imgWrapperNext = document.querySelector('#imgwrappernext')
+
 const carosel = document.querySelector('.carosel')
 const closeButton = document.querySelector('.close')
 const arrow_left = document.querySelector('.arrow_left')
@@ -48,11 +54,11 @@ const children = [
 
 ]
 const interior = [
-    'https://sun9-77.userapi.com/impg/mbHFogEu2tWvmuB3HaWhhiVrns2Cedru0OnF0A/tWDtdBOzhzE.jpg?size=1280x853&quality=95&sign=35b9e442a3f1a0855261a1d2822c8f6e&type=album',
+    'https://sun9-77.userapi.com/impg/mbHFogEu2tWvmuB3HaWhhiVrns2Cedru0OnF0A/tWDtdBOzhzE.jpg?size=2560x1707&quality=95&sign=ecacfcdd2c8ae6c1cfa2eddc586e3cab&type=album',
     'https://sun9-77.userapi.com/impg/TOoC0Xa_o99kw7pUR9FR67NK36Vu8-CKYXdvcA/ZmEg-2xrhmg.jpg?size=2560x1707&quality=95&sign=42bf4cde31b36d7f11adf7be387b0b23&type=album',
     'https://sun9-75.userapi.com/impg/EyNgyU5uyvDzbITa3BBWIa-iSYQ2_fxM1wa81Q/COAshxYwW6E.jpg?size=2560x1708&quality=95&sign=b9e458b34b88503b30f3ef5a875abdc1&type=album',
-    'https://sun9-43.userapi.com/impg/-En0_BsMK09AAepeVYbyDhlHFnl3kembewoDnA/MvZyDwSIi-o.jpg?size=1440x2160&quality=95&sign=7612cc922edfa5aa8608187df6df8ceb&type=album',
     'https://sun9-62.userapi.com/impg/fVvq8uik6d_CxlM34mjk9J2AFgjfXwg4GzJ6kA/VJzIXl5e6T8.jpg?size=2560x1707&quality=95&sign=4bcef637fa4b7e58f2563e2266b9323c&type=album',
+    'https://sun9-43.userapi.com/impg/-En0_BsMK09AAepeVYbyDhlHFnl3kembewoDnA/MvZyDwSIi-o.jpg?size=1440x2160&quality=95&sign=7612cc922edfa5aa8608187df6df8ceb&type=album',
     'https://sun9-31.userapi.com/impg/JpO8XxewPs4Q-2AYdVfLFySJJCg-tAK0UtXbCg/WdOA8G6KiGg.jpg?size=2560x1707&quality=95&sign=1abea1ad98df73d87b2cb9fa78bc8547&type=album',
     'https://sun9-63.userapi.com/impg/KCuEMmJtGLR0MAohwW1jlipoZ3TqvbnkVRa6Rw/SIH4vNE5jwU.jpg?size=2560x1707&quality=95&sign=8d4713a8423399d0daec4aeadc6a2307&type=album',
     'https://sun9-55.userapi.com/impg/UMAICpkeQC-3PwOf_JZ_VRsfwjBAx7-aqtc-eA/_0b_lCKAnRc.jpg?size=2560x1707&quality=95&sign=499db8908b671e34d59f2d5efefaf3c7&type=album',
@@ -73,8 +79,8 @@ const interior = [
     'https://sun9-21.userapi.com/impg/fcPccL4qcqRWg6B3dilPbf_WN09z4t5qlaSLhQ/HFpDHe_d2fs.jpg?size=2560x1707&quality=95&sign=7e92e7f28392a9d995410e85e9d7b1db&type=album',
     'https://sun9-36.userapi.com/impg/kkBSB1RWVW5hOlEOrQtSjq0JI5hx5kClUZtJDA/IQdFJOM6wyY.jpg?size=2560x1707&quality=95&sign=494e812f9494ebee5f05478dbe870c00&type=album',
     'https://sun9-64.userapi.com/impg/z05fER9aS84PK__UsyE9pwJ_lGOLRJae5r1npA/k6zykIZKzGw.jpg?size=2560x1717&quality=95&sign=d2948423eb516b5a371c9bbd303b1f71&type=album',
-    'https://sun9-27.userapi.com/impg/0tu6vkmNfkPeOD_gqfzwKtACNWgD6RGzzIOWpA/FC0h-be1z-4.jpg?size=2560x1707&quality=95&sign=8d07dcbb5f55875291d373c5705ea40b&type=album',
     'https://sun9-7.userapi.com/impg/dskdzjXSaKs8ZhWgERVdja_aBphE5HGHX1YE0w/pcfx72878SM.jpg?size=1440x2160&quality=95&sign=5f12cc1078a136b64384d1dde6b143ad&type=album',
+    'https://sun9-27.userapi.com/impg/0tu6vkmNfkPeOD_gqfzwKtACNWgD6RGzzIOWpA/FC0h-be1z-4.jpg?size=2560x1707&quality=95&sign=8d07dcbb5f55875291d373c5705ea40b&type=album',
 ]
 
 window.addEventListener('scroll', function() {
@@ -83,9 +89,9 @@ window.addEventListener('scroll', function() {
     }else if(window.scrollY<200){
         nav.classList.remove('nav_close')
     }
-  });
+});
 
-let curArr = [...people]
+let curArr = [...interior]
 let curId = 0
 
 
@@ -128,7 +134,7 @@ interiorsButton.addEventListener('click',()=> {
 const openModal = (index) => () => {
     curId = index
     carosel.classList.add('carosel_active')
-    imgfull.setAttribute('src',`${curArr[curId]}`)
+    imgcur.setAttribute('src',`${curArr[curId]}`)
 }
 
 const closeModal = (e) => {
@@ -137,21 +143,56 @@ const closeModal = (e) => {
     }
 }
 
+const animatedPhoto = (direction) => {
+    const swapId = (direction === 'next') ? (curId+1)%curArr.length : (curId-1+curArr.length)%curArr.length ;
+
+    if(direction === 'next'){
+        imgnext.src =curArr[swapId]
+        imgWrapperCur.classList.add('cur_animate_left')
+        imgWrapperNext.classList.add('next_animate')
+    }else{
+        imgprev.src =curArr[swapId]
+        imgWrapperCur.classList.add('cur_animate_rigth')
+        imgWrapperPrev.classList.add('prev_animate')
+    }
+
+    setTimeout(() => {
+        imgcur.src = curArr[swapId]
+        imgWrapperCur.classList.remove('cur_animate_left')
+        imgWrapperNext.classList.remove('next_animate')
+        imgWrapperCur.classList.remove('cur_animate_rigth')
+        imgWrapperPrev.classList.remove('prev_animate')
+        curId = swapId
+    }, 250)
+
+    
+}
+
 const nextPhoto = () => {
-    curId = (curId+1)%curArr.length
-    imgfull.setAttribute('src',`${curArr[curId]}`)
+    animatedPhoto('next')
 }
 
 const prevPhoto = () => {
-    curId = (curId-1 + curArr.length)%curArr.length
-    imgfull.setAttribute('src',`${curArr[curId]}`)
+    animatedPhoto('prev')
 }
+
+let startX = 0
+
+imgcur.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX
+})
+
+imgcur.addEventListener('touchend', (e) => {
+    let diff = e.changedTouches[0].clientX - startX
+    if (diff > 50) nextPhoto
+    else if (diff < -50) nextPhoto
+})
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
-        nextPhoto()
-    } else if (e.key === 'ArrowRight') {
         prevPhoto()
+    } else if (e.key === 'ArrowRight') {
+        nextPhoto()
     } else if (e.key === 'Escape') {
         carosel.classList.remove('carosel_active')
       }
@@ -159,7 +200,7 @@ document.addEventListener('keydown', (e) => {
 
 
 closeButton.addEventListener('click',closeModal )
-carosel.addEventListener('click',closeModal )
+imgWrapperCur.addEventListener('click',closeModal )
 arrow_right.addEventListener('click',nextPhoto)
 arrow_left.addEventListener('click',prevPhoto)
 

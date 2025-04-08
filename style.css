@@ -1,3 +1,7 @@
+:root{
+    --img-animation-time: 0.25s;
+}
+
 *{
     box-sizing: border-box;
     user-select: none;
@@ -108,20 +112,71 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
 .img_block{
     display: grid;
     align-items: center;
-    position: relative;
-    background-color: aliceblue;
+
+    
+    /* transform: translateX(-100%); */
 }
+
+
+
+.imgwrapper{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: grid;
+}
+/* .imgwrapper_animate_left{
+    transform: translate(-100%);
+    transition: 1s;
+} */
+
 .img{
     max-width: 100vw;
     max-height: 100vh;
     object-fit: fill;
-    /* min-height: 100vh; */
+    justify-self: center;
 
 }
+
+.cur{
+    transform: translate(0);
+    transition: 0s;
+}
+.cur_animate_left{
+    transform: translate(-100%);
+    transition: var(--img-animation-time);
+}
+.cur_animate_rigth{
+    transform: translate(100%);
+    transition: var(--img-animation-time);
+}
+.next{
+    transform: translate(100%);
+    transition: 0s;
+}
+.next_animate{
+    transform: translate(0);
+    transition: var(--img-animation-time);
+}
+.prev{
+    transform: translate(-100%);
+    transition: 0s;
+}
+.prev_animate{
+    transform: translate(0);
+    transition: var(--img-animation-time);
+}
+
+
+
+
+
+
 .arrow{
     width: 3vw;
     height: 3vw;
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.259);
     position: absolute;
     border-radius: 50%;
     display: grid;
@@ -130,20 +185,31 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
     font-size: 2vw;
     font-weight: 900;
     cursor: pointer;
+    border: 1px solid rgba(240, 248, 255, 0.444);
+    transition: .3s;
+}
+.arrow:active{
+    transform: scale(0.9);
+}
+.arrow:hover{
+    background-color: aliceblue;
+    transition: .3s;
 }
 .arrow_left{
-    left: 1.4vw;
+    left: 3vw;
 }
 .arrow_right{
-    right: 1.4vw;
+    right: 3vw;
 }
 .close{
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 15px;
+    right: 10px;
     width: 2.5vw;
     height: 2.5vw;
-    background-color: aliceblue;
+    color: rgba(240, 248, 255, 0.554);
+    transform: scale(1.3,1);
+    font-weight: 900;
     border-radius: 50%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2vw;
@@ -152,7 +218,20 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
     justify-items: center;
     line-height: 0;
     cursor: pointer;
+    transition: .3s;
 }
+.close:hover{
+    color: aliceblue;
+    transition: .3s;
+}
+
+
+
+
+
+
+
+
 
 
 /* 
