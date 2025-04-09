@@ -1,17 +1,21 @@
 const body  = document.querySelector('body')
 
 const nav = document.querySelector('nav')
+const aboutButton = document.querySelector('#aboutButton')
 const peopleButton = document.querySelector('#peopleButton')
 const childrenButton = document.querySelector('#childrenButton')
 const interiorsButton = document.querySelector('#interiorsButton')
+const productsButton = document.querySelector('#productsButton')
+const retouchButton = document.querySelector('#retouchButton')
+const restorationButton = document.querySelector('#restorationButton')
 
 const masonry  = document.querySelector('.masonry')
-const masonryBlock1 = document.createElement('div')
-const masonryBlock2 = document.createElement('div')
-const masonryBlock3 = document.createElement('div')
-masonryBlock1.classList.add('masonry_block')
-masonryBlock2.classList.add('masonry_block')
-masonryBlock3.classList.add('masonry_block')
+const aboutInfo  = document.querySelector('.about')
+
+const carosel = document.querySelector('.carosel')
+const closeButton = document.querySelector('.close')
+const arrow_left = document.querySelector('.arrow_left')
+const arrow_right = document.querySelector('.arrow_right')
 
 const imgprev = document.querySelector('#imgprev')
 const imgcur = document.querySelector('#imgcur')
@@ -20,13 +24,14 @@ const imgWrapperPrev = document.querySelector('#imgwrapperprev')
 const imgWrapperCur = document.querySelector('#imgwrappercur')
 const imgWrapperNext = document.querySelector('#imgwrappernext')
 
-const carosel = document.querySelector('.carosel')
-const closeButton = document.querySelector('.close')
-const arrow_left = document.querySelector('.arrow_left')
-const arrow_right = document.querySelector('.arrow_right')
-
 const burgermenu = document.querySelector('.burgermenu')
 const xmenu = document.querySelector('.xmenu')
+const openMenuBtn = document.querySelector('.open_menu_btn')
+
+
+//  массивы с фотками по категориям ------>>>
+
+const about =['about']
 
 const people = [
     'https://drscdn.500px.org/photo/1111556548/q%3D90_m%3D2048/v2?sig=e2f075d4596320b4e8a04a2236a94683643f3bc58cc65a4de5454d9d8785f6f0',
@@ -53,7 +58,7 @@ const children = [
     'https://lh3.google.com/u/0/d/1gQnJTuGhKAQEavZwVouglowaXFFggAS1=w675-h1318-iv3',
 
 ]
-const interior = [
+const interiors = [
     'https://sun9-77.userapi.com/impg/mbHFogEu2tWvmuB3HaWhhiVrns2Cedru0OnF0A/tWDtdBOzhzE.jpg?size=2560x1707&quality=95&sign=ecacfcdd2c8ae6c1cfa2eddc586e3cab&type=album',
     'https://sun9-77.userapi.com/impg/TOoC0Xa_o99kw7pUR9FR67NK36Vu8-CKYXdvcA/ZmEg-2xrhmg.jpg?size=2560x1707&quality=95&sign=42bf4cde31b36d7f11adf7be387b0b23&type=album',
     'https://sun9-75.userapi.com/impg/EyNgyU5uyvDzbITa3BBWIa-iSYQ2_fxM1wa81Q/COAshxYwW6E.jpg?size=2560x1708&quality=95&sign=b9e458b34b88503b30f3ef5a875abdc1&type=album',
@@ -82,7 +87,14 @@ const interior = [
     'https://sun9-7.userapi.com/impg/dskdzjXSaKs8ZhWgERVdja_aBphE5HGHX1YE0w/pcfx72878SM.jpg?size=1440x2160&quality=95&sign=5f12cc1078a136b64384d1dde6b143ad&type=album',
     'https://sun9-27.userapi.com/impg/0tu6vkmNfkPeOD_gqfzwKtACNWgD6RGzzIOWpA/FC0h-be1z-4.jpg?size=2560x1707&quality=95&sign=8d07dcbb5f55875291d373c5705ea40b&type=album',
 ]
+const products = []
+const retouch = []
+const restoration = []
 
+// <<<----------массивы с фотками по категориям
+
+
+// анимация навигации при скролле  ------>>>
 window.addEventListener('scroll', function() {
     if(window.scrollY>200){
         nav.classList.add('nav_close')
@@ -91,46 +103,50 @@ window.addEventListener('scroll', function() {
     }
 });
 
-let curArr = [...interior]
+// <<<--------   анимация навигации при скролле 
+
+let curArr = [...about]
 let curId = 0
 
+// свитчер бургерменю моб версия ------>>>
 
-const burgerOn = () => {
-    nav.classList.add('nav_burger')
-}
+const burgerOn = () => nav.classList.add('nav_burger')
+const burgerOff = () => nav.classList.remove('nav_burger')
+burgermenu.addEventListener('click',() => burgerOn())
+openMenuBtn.addEventListener('click',() => burgerOn())
+xmenu.addEventListener('click',() => burgerOff())
 
-const burgerOff = () => {
-    nav.classList.remove('nav_burger')
-}
+// <<<------- свитчер бургерменю моб версия
 
 // кликаем кнопки меню --------->>
 
-burgermenu.addEventListener('click',()=> {
-    burgerOn()
-})
-xmenu.addEventListener('click',()=> {
-    burgerOff()
-})
-// -----------------
-peopleButton.addEventListener('click',()=> {
-    curArr = [...people]
+const navMenuButtonsHandler = (tempArr , avtiveBtn) => {
+    curArr = [...tempArr]
     render()
     burgerOff()
-})
-childrenButton.addEventListener('click',()=> {
-    curArr = [... children]
-    render()
-    burgerOff()
-})
-interiorsButton.addEventListener('click',()=> {
-    curArr = [... interior]
-    render()
-    burgerOff()
-})
+
+    aboutButton.classList.remove('active_nav_button')
+    peopleButton.classList.remove('active_nav_button')
+    childrenButton.classList.remove('active_nav_button')
+    interiorsButton.classList.remove('active_nav_button')
+    productsButton.classList.remove('active_nav_button')
+    retouchButton.classList.remove('active_nav_button')
+    restorationButton.classList.remove('active_nav_button')
+
+    avtiveBtn.classList.add('active_nav_button')
+}
+
+aboutButton.addEventListener('click',()=> navMenuButtonsHandler(about , aboutButton))
+peopleButton.addEventListener('click',()=> navMenuButtonsHandler(people , peopleButton ))
+childrenButton.addEventListener('click',()=> navMenuButtonsHandler(children , childrenButton))
+interiorsButton.addEventListener('click',()=> navMenuButtonsHandler(interiors , interiorsButton))
+productsButton.addEventListener('click',()=> navMenuButtonsHandler(products , productsButton))
+retouchButton.addEventListener('click',()=> navMenuButtonsHandler(retouch , retouchButton))
+restorationButton.addEventListener('click',()=> navMenuButtonsHandler(restoration , restorationButton))
 
 // << ---------    кликаем кнопки меню 
 
-
+// modal window handler ----------------------------------------->>>>>>>>>>
 const openModal = (index) => () => {
     curId = index
     carosel.classList.add('carosel_active')
@@ -160,6 +176,8 @@ const animatedPhoto = (direction) => {
 
     setTimeout(() => {
         imgcur.src = curArr[swapId]
+        imgnext.src = ''
+        imgprev.src = ''
         imgWrapperCur.classList.remove('cur_animate_left')
         imgWrapperNext.classList.remove('next_animate')
         imgWrapperCur.classList.remove('cur_animate_rigth')
@@ -211,34 +229,47 @@ arrow_right.addEventListener('click',nextPhoto)
 arrow_left.addEventListener('click',prevPhoto)
 
 
+//<<<<<<<<-------------------------------- modal window handler
+
+
 
 
 const render = () => {
-    masonryBlock1.innerHTML = ''
-    masonryBlock2.innerHTML = ''
-    masonryBlock3.innerHTML = ''
+    masonry.innerHTML = ''
 
-    curArr.map((ph, index) => {
-        const newPhoto = document.createElement('img')
-        newPhoto.setAttribute('src',`${ph}`)
-        newPhoto.setAttribute('class',`photo`)
-    
-        if(((index+4)%3) === 0){
-            masonryBlock3.append(newPhoto)
-        }else if(((index+4)%3) === 2){
-            masonryBlock2.append(newPhoto)
-        }else{
-            masonryBlock1.append(newPhoto)
-        }
-    
-        masonry.append(masonryBlock1)
-        masonry.append(masonryBlock2)
-        masonry.append(masonryBlock3)
-    
-        newPhoto.addEventListener('click',openModal(index) )
-    
-    })
+    if(curArr[0] === 'about'){
+        aboutInfo.classList.remove('about_hidden')
+    }else{
+        aboutInfo.classList.add('about_hidden')
+        const masonryBlock1 = document.createElement('div')
+        const masonryBlock2 = document.createElement('div')
+        const masonryBlock3 = document.createElement('div')
+        masonryBlock1.classList.add('masonry_block')
+        masonryBlock2.classList.add('masonry_block')
+        masonryBlock3.classList.add('masonry_block')
+        curArr.map((ph, index) => {
+            const newPhoto = document.createElement('img')
+            newPhoto.setAttribute('src',`${ph}`)
+            newPhoto.setAttribute('class',`photo`)
+        
+            if(((index+4)%3) === 0){
+                masonryBlock3.append(newPhoto)
+            }else if(((index+4)%3) === 2){
+                masonryBlock2.append(newPhoto)
+            }else{
+                masonryBlock1.append(newPhoto)
+            }
+        
+            masonry.append(masonryBlock1)
+            masonry.append(masonryBlock2)
+            masonry.append(masonryBlock3)
+        
+            newPhoto.addEventListener('click',openModal(index) )
+        
+        })
+    }
 }
 
 render()
+aboutButton.classList.add('active_nav_button')
 
