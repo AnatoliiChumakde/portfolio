@@ -144,7 +144,9 @@ const closeModal = (e) => {
 }
 
 const animatedPhoto = (direction) => {
-    const swapId = (direction === 'next') ? (curId+1)%curArr.length : (curId-1+curArr.length)%curArr.length ;
+    const swapId = (direction === 'next') 
+    ? (curId+1)%curArr.length 
+    : (curId-1+curArr.length)%curArr.length ;
 
     if(direction === 'next'){
         imgnext.src =curArr[swapId]
@@ -180,12 +182,15 @@ let startX = 0
 
 imgcur.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX
+    // console.log(startX)
 })
 
 imgcur.addEventListener('touchend', (e) => {
     let diff = e.changedTouches[0].clientX - startX
-    if (diff > 50) nextPhoto
-    else if (diff < -50) nextPhoto
+    if (Math.abs(diff) > 50){
+       diff>0? prevPhoto() : nextPhoto()
+    } 
+     
 })
 
 document.addEventListener('keydown', (e) => {
@@ -201,6 +206,7 @@ document.addEventListener('keydown', (e) => {
 
 closeButton.addEventListener('click',closeModal )
 imgWrapperCur.addEventListener('click',closeModal )
+carosel.addEventListener('click',closeModal )
 arrow_right.addEventListener('click',nextPhoto)
 arrow_left.addEventListener('click',prevPhoto)
 
