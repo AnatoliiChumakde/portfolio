@@ -428,7 +428,7 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
         display: none;
     }
     .close{
-        font-size: calc(2.5vw + 30px);
+        font-size: calc(2vw + 30px);
         top: 35px;
         right: 50px;
     }
@@ -448,7 +448,7 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
         max-width: 1200px;
     }
     .about_paragraph , .about_contact{
-        font-size: calc(1vw + 10px);
+        font-size: calc(1.2vw + 12px);
     }
     .about_contact a{
      color: aliceblue;
