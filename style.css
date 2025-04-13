@@ -111,6 +111,10 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
     overflow: hidden;
     display: none;
     z-index: 2;
+    min-height: 100vh;
+    height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
 }
 .carosel_active{
     display: grid;
@@ -122,6 +126,7 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
     place-items: center;
     min-height: 100vh;
     height: 100vh;
+    min-height: 100dvh;
     height: 100dvh;
     width: 100%;
 }
@@ -133,8 +138,14 @@ _____    ____   _____   _    _  _____     __  __  ______  _   _  _    _
     /* top: 0; */
     left: 0;
     width: 100%;
-    height: auto;
+    /* height: auto; */
     display: grid;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
+    
 }
 
 .img{
