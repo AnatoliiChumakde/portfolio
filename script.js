@@ -82,15 +82,45 @@ const people = [
    'https://sun9-18.userapi.com/impg/6P1dND2MYsUxdYl-RPB8_Jm_W1ZZEdYVtyi9pA/X6q36acL1yI.jpg?size=2560x1707&quality=95&sign=e857db0fc3d78e612352c0f38e02e41f&type=album',
 ]
 const children = [
-    'https://lh3.google.com/u/0/d/1k67TAbk05LOZ1S_WSaOj0b6EiRQ_4m5d=w1279-h1318-iv5',
-    'https://lh3.google.com/u/0/d/1xi9KLaksOYdWKKdrr8TysQXMPVagGrba=w1279-h1318-iv3',
-    'https://lh3.google.com/u/0/d/1j4zoCgBtsOu3Pg1UMd_RYGBSqrmeiIX-=w675-h1318-iv3',
-    'https://lh3.google.com/u/0/d/1oOyHJBxfWMmCAILgTSeuTO76CkPSR3zT=w675-h1318-iv3',
-    'https://lh3.google.com/u/0/d/1PmWZY4qO39-syn6GYUMr-zyhfHIa2QwA=w675-h1318-iv5',
-    'https://lh3.google.com/u/0/d/1pNVueWaolhcuyac7aoXYbT92YJXbwflh=w675-h1318-iv3',
-    'https://lh3.google.com/u/0/d/1-Kb9-Qmm2cZWMCNx4mNg4f9aotBfvXJA=w675-h1318-iv3',
-    'https://lh3.google.com/u/0/d/19GxYqcu8g58U4l6JqRxagdN89NS0tmkM=w675-h1318-iv3',
-    'https://lh3.google.com/u/0/d/1gQnJTuGhKAQEavZwVouglowaXFFggAS1=w675-h1318-iv3',
+    'https://sun9-75.userapi.com/impg/NdHe4PrFPtp46N_ey9i3eiXvVvTFuSIP0FV-yA/06Uk3G1FbdA.jpg?size=2560x1707&quality=95&sign=60dc2d418b66eb9c1af61e49c6cb4c34&type=album',
+    'https://sun9-59.userapi.com/impg/tilnTM8nW2xM_26BEqgMtCAFbDcXx-LdZWcrXQ/9-RkZxgyLLo.jpg?size=2560x1707&quality=95&sign=5c570d09b752804930a6ab9bee4a78bf&type=album',
+    'https://sun9-44.userapi.com/impg/heLg3fMlpOwxBMW-3RMXfApwh0uBj0kYz35yaA/3wvpEyQgWcY.jpg?size=2560x1707&quality=95&sign=772ca236bbae39225fcc14a3dc9450bc&type=album',
+    'https://sun9-20.userapi.com/impg/3Gtsv661F1-ASg-0T7IQKNBQ0hr6zXXZ0S5aRw/RCmqV17Sz0Y.jpg?size=2560x1707&quality=95&sign=cfa805ac38fd169152022d5d836f53de&type=album',
+    'https://sun9-15.userapi.com/impg/jIJ3jiPGBEwnuRAmn3mtgaHr4aQvbf84z6RDzw/St-5LOu8I4s.jpg?size=2560x1707&quality=95&sign=155bae37d0561beae9bba2594e47432d&type=album',
+    'https://sun9-9.userapi.com/impg/d--ISP6KBb0FDtMWBuOcXip-WsM8F26BDJwfTA/m50f0R5dwc4.jpg?size=2560x1707&quality=95&sign=ba7663a71aa49e3022662412510acce3&type=album',
+
+    'https://sun9-44.userapi.com/impg/wmsQT4-ArGo5W1DiLnNageYHHNtK6VXbyP8BqA/7t08gV4uaNY.jpg?size=1440x2160&quality=95&sign=d32444d74088c05c7904c686ff5baedd&type=album',
+
+    'https://sun9-30.userapi.com/impg/xE_daowU5jgeQTXaM8pGabrTE03xBM_gJ29gDg/9vJ36FTfviE.jpg?size=2560x1707&quality=95&sign=3e9adb0d0eec26e4ff7f14855145318f&type=album',
+    'https://sun9-10.userapi.com/impg/MRtmzOgUTEOXuR-KGhckti5CODw67fYzU4GI-w/lcR_TedHKKY.jpg?size=1440x2160&quality=95&sign=e884cf9b0124439b4d8719370bbfbbf6&type=album',
+
+    "https://sun9-34.userapi.com/impg/iubzM6B4UBVVC7GZZKrZvyw0sgRQY_7XJM2XAQ/caeY7_hJnb8.jpg?size=2560x1707&quality=95&sign=c372bbb32e45a3a2027354e49777a497&type=album",
+    "https://sun9-28.userapi.com/impg/JjvJVEirD8sSJSVur-7_jrWSht0WZaSz9pnwhg/Cwr3i9AhX4A.jpg?size=2560x1707&quality=95&sign=5c2c1569f14c269b254f1001c6c160c0&type=album",
+    "https://sun9-58.userapi.com/impg/TjVUQEFswhNWkhFcVn2ARbzT8x0CiCnDehHI7Q/BjFH32Jf5BE.jpg?size=2560x1707&quality=95&sign=6847bee6feb09aa7263dddb094b94030&type=album",
+
+    'https://sun9-74.userapi.com/impg/dC9af8voRT96doxRplAvr5a5ykAj_ZI5Qi2WNw/1akq02ZttG4.jpg?size=2560x1707&quality=95&sign=794a9e91d65ffb070f65034080835666&type=album',
+    'https://sun9-59.userapi.com/impg/HzLK6yd4P7R6Uh7RjPcCI18qrcN-OdvU8B_uXA/oyJ2Ccj_Fjk.jpg?size=2560x1707&quality=95&sign=84e5da3f9fde3b1cc3c9cae944d35f68&type=album',
+
+    'https://sun9-18.userapi.com/impg/dEgLHRkU_xun9Wgt_hOfU3qi9JQwm3PQ59Hz-Q/3PWIsTqTajw.jpg?size=1440x2160&quality=95&sign=772049bcce1e454fa7633cbd63f5fd03&type=album',
+    'https://sun9-4.userapi.com/impg/Ksa-3J3BGzJQOgkplnfa7aDdc-e83Hao8OuQRA/yCVCoeqjKsI.jpg?size=1440x2160&quality=95&sign=d5094448f8e207ba518865480a068ba7&type=album',
+    'https://sun9-47.userapi.com/impg/nNF1lowvk15Bj-LH59KlrnUdGcE5k--S7B2gUA/YK6ZHiy9Eoc.jpg?size=2560x1707&quality=95&sign=f6a214315fd84d42c181f0da0bf363f3&type=album',
+
+
+    'https://sun9-33.userapi.com/impg/yzEVPIsexBZooSU5Wcr_HCKX-_ZApwKemUln0Q/4aMmED2I0lw.jpg?size=1702x2160&quality=95&sign=bf5ab7dfeb419543d64d62a5e480811e&type=album',
+    'https://sun9-24.userapi.com/impg/x8Ih5_nXbte-_tdKCuqelY2JVIiuyN7Dj9MVrw/evMJHACAPyk.jpg?size=1440x2160&quality=95&sign=6bf30df9feafcab3df4ccaaa9202b765&type=album',
+
+    'https://sun9-52.userapi.com/impg/ypYBjyPTbnD_2LdC0VqfVdLyDLyx_fZGc2PWlA/vu5O_Zt2OxA.jpg?size=2560x1707&quality=95&sign=01609861436144203711b0f86eebd62b&type=album',
+    'https://sun9-17.userapi.com/impg/pqzKb4yTU9RXsMYpNmqKqlEqVvzxkn774lHenQ/YLwzfO25zKo.jpg?size=2560x1707&quality=95&sign=36e19f7850e299136526f6864d3ba1f0&type=album',
+
+    'https://sun9-26.userapi.com/impg/xWTrm-Sd1eTK4sI2Kfhb2g0boZwvQ5Mii7lhqg/2k-ijzpSGpA.jpg?size=2560x1706&quality=95&sign=463d8f0dd68bee9aa14a0366ac9b3c02&type=album',
+
+    'https://sun9-55.userapi.com/impg/5bb1w9uy6MT9BcfddjMDAPp0_f1rVDNS2-IN5A/gZGgDb6Dlmk.jpg?size=1440x2160&quality=95&sign=6d7ccfa50663343ce5860d63795e8968&type=album',
+    'https://sun9-46.userapi.com/impg/GmNYG502ZvJ2y60g99z2ormnCo_1lKgYJQ1mkQ/4wS-9ZeXUGM.jpg?size=2560x1707&quality=95&sign=7c8815f1930ef6e11a080617f2b5f7e1&type=album',
+    'https://sun9-42.userapi.com/impg/N3L1Ku4H_kefD9KJMp7ZOAdipMxVSN3LiOTxKg/IWhczqlOm5s.jpg?size=2560x1707&quality=95&sign=09dd8bb31d66e048bd68ef5eb38d906b&type=album',
+    'https://sun9-78.userapi.com/impg/amwiDpLqETmZ2sE4rc6mtRoJIfxj3M6inEY_1w/RNfkg8s7xdQ.jpg?size=1440x2160&quality=95&sign=97da2f9c3449cd97ea896d5c4507a448&type=album',
+    '',
+    '',
+
 
 ]
 const interiors = [
@@ -144,7 +174,7 @@ window.addEventListener('scroll', function() {
 
 // <<<--------   анимация навигации при скролле 
 
-let curArr = [...about]
+let curArr = [...children]
 let curId = 0
 
 // свитчер бургерменю моб версия ------>>>
