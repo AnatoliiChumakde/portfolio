@@ -36,6 +36,9 @@ body{
     width: 100%;
     display: block;
 }
+.hidden_photo{
+    display: none;
+}
 
 
 /*  _   _           __      __
